@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excel Compare Pro</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #eef2f7;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        #dropArea {
+            border: 2px dashed #007bff;
+            padding: 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td {
+            border: 1px solid #ccc;
+            padding: 6px;
+        }
+
+        .diff {
+            background: red;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            td { font-size: 12px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📊 Excel Compare Tool</h1>
+
+<div class="box">
+
+    <input type="file" id="file1">
+    <input type="file" id="file2"><br>
+
+    <div id="dropArea">📂 Drag & Drop Excel Files Here</div>
+
+    <br>
+    <button onclick="compareFiles()">Compare</button>
+    <button onclick="filterDiff()">Show Only Differences</button>
+    <button onclick="downloadExcel()">Download Result</button>
+
+    <h3 id="fileNames"></h3>
+    <h3 id="resultText"></h3>
+
+</div>
+
+<div id="output"></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
